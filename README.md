@@ -19,7 +19,7 @@ var app_index = function() {
 LoadManager.ifReady(['/jquery.js', '/index.js']).run('app_index');
 
 
-Syntax explenation:
+Syntax explanation:
 
 ifReady()
 - accepts depenendency array as parameter
