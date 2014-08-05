@@ -1,15 +1,30 @@
 loadManager
 ===========
 
-JS dependency loader, which loads js files in parallel, and executes js code when all loading is ready
+Experimental JS dependency loader, which provides parallel js files loading and executes child code when all dependencies are ready.
 
-Example of ussage:
 
-LoadManager.waitFor(['/jquery.js']).toLoad('/index.js').wrappedIn('app_index');
+How to use:
 
+1) wrapp your js code which depends on jquery to function e.g.:
 
 index.js:
 
 var app_index = function() {
-    console.log($('body'));
+    console.log($);
 }
+
+2) let LoadManager to do the job:
+
+LoadManager.ifReady(['/jquery.js', '/index.js']).run('app_index');
+
+
+Syntax explenation:
+
+ifReady()
+- accepts depenendency array as parameter
+- each element in array specifies path to js file
+- last element in depenedency array specifies the child file
+
+run()
+- accepts a function name, to take the content from and run when dependency are resolved
