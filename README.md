@@ -9,15 +9,15 @@ How to use:
 1) wrapp your js code which depends on jquery to function e.g.:
 
 index.js:
-
+```
 var app_index = function() {
     console.log($);
 }
-
+```
 2) let LoadManager to do the job:
-
+```
 LoadManager.ifReady(['/jquery.js', '/index.js']).run('app_index');
-
+```
 
 Syntax explanation:
 
